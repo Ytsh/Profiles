@@ -15,14 +15,18 @@ class CreatePersonalsTable extends Migration
     {
         Schema::create('personals', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('father_name');
-            $table->string('mother_name');
-            $table->string('grandfather_name');
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('phone');
+            $table->string('address1');
+            $table->string('address2');
+            $table->string('postcode');
+            $table->string('state');
+            $table->string('area');
             $table->string('email');
-            $table->string('address');
-            $table->unsignedInteger('ward');
-            $table->unsignedBigInteger('phone');
+            $table->string('education');
+            $table->string('country');
+            $table->string('region');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

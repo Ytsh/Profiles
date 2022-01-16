@@ -17,21 +17,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ad', function () {
+    return view('admin.index');
+});
+
 Auth::routes();
 
-Route::post('/upload', 'HomeController@uploadAvatar');
+Route::post('/upload', 'HomeController@uploadAvatar') ->name('avatar.upload');
 
-Route::get('/personal', 'PersonalController@index');
-Route::post('/personal', 'PersonalController@store');
-Route::put('/personal/update', 'PersonalController@update');
+Route::get('/personal', 'PersonalController@index')->name('personal.index');
+Route::post('/personal', 'PersonalController@store')->name('personal.store');
+Route::put('/personal/update', 'PersonalController@update')->name('personal.update');
 
-Route::get('/professional', 'ProfessionalController@index');
-Route::post('/professional', 'ProfessionalController@store');
-Route::put('/professional/update', 'ProfessionalController@update');
+Route::get('/professional', 'ProfessionalController@index')->name('professional.index');
+Route::post('/professional', 'ProfessionalController@store')->name('professional.store');
+Route::put('/professional/update', 'ProfessionalController@update')->name('professional.update');
 
-Route::get('/academic','AcademicController@index');
-Route::post('/academic', 'AcademicController@store');
-Route::put('/academic/update', 'AcademicController@update');
+Route::get('/academic','AcademicController@index')->name('academic.index');
+Route::post('/academic', 'AcademicController@store')->name('academic.store');
+Route::put('/academic/update', 'AcademicController@update')->name('academic.update');
+
+Route::get('/profile', 'ProfileController@index');
+
 
 
 

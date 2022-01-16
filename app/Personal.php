@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Personal extends Model
 {
     protected $fillable = [
-        'name', 'email', 'father_name', 'mother_name','grandfather_name','ward','address','phone','user_id'];
+        'fname', 'email', 'lname', 'address2','state','post','address1','phone','user_id','country','education','region','area'];
    
     public function users()
     {

@@ -27,28 +27,40 @@ class PersonalRequest extends FormRequest
     {
         // dd('j');
         return [
-            'name' => [
+            'fname' => [
                 'required', 'min:3'
             ],
-            'father_name' => [
+            'lname' => [
                 'required', 'min:3'
             ],
-            'mother_name' => [
+            'address1' => [
                 'required', 'min:3'
             ],
-            'grandfather_name' => [
+            'postcode' => [
                 'required', 'min:3'
             ],
-            'ward' => [
-                'required', 'max:2'
+            'state' => [
+                'required',
             ],
             'phone' => [
                 'required', 'min:10','max:10'
             ],
-            'address' => [
+            'address2' => [
                 'required', 'min:3'
             ],
             'email' => [
+                'required',
+            ],
+            'area' => [
+                'required',
+            ],
+            'education' => [
+                'required',
+            ],
+            'country' => [
+                'required',
+            ],
+            'region' => [
                 'required',
             ],
         ];

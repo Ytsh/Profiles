@@ -2,11 +2,11 @@
     <button type="button" wire:click="increment" class="btn btn-outline-primary">+</button>
 
 
-    @foreach($counts as $count)
-    <div class="flex justify-center py-2" wire:key="{{$loop->index}}">
-        <input type="text" name="experience[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($loop->index+1)}}" @if(is_array($count)) value = "{{$count['experience']}}" @endif/>
-        <input type="hidden" name="experienceId[]" @if(is_array($count)) value="{{$count['id']}}" @endif/>
-        <button type="button" wire:click="remove({{$loop->index}})" class="btn btn-outline-secondary">-</button>
+    @foreach($counts as $key => $value)
+    <div class="flex justify-center py-2" wire:key="{{$key}}">
+        <input type="text" name="experience[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($value)) value = "{{$value['experience']}}" @endif/>
+        <input type="hidden" name="experienceId[]" @if(is_array($value)) value="{{$value['id']}}" @endif/>
+        <button type="button" wire:click="remove({{$key}})" class="btn btn-outline-secondary">-</button>
 
     </div>
     @endforeach

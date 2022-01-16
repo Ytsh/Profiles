@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class AddProfessional extends Component
 {
-    public $counts = [];
+    public $counts = ['0'];
  
     public function increment()
     {
