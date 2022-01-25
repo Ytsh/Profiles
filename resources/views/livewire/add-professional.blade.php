@@ -4,7 +4,7 @@
 
     @foreach($counts as $key => $value)
     <div class="flex justify-center py-2" wire:key="{{$key}}">
-        <input type="text" name="experience[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" />
+        <input type="text" required name="experience[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" />
 
         <button type="button" wire:click="remove({{$key}})" class="btn btn-outline-secondary">-</button>
 

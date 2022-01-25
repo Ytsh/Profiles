@@ -3,6 +3,6 @@
 @endif
 <form action="{{route('avatar.upload')}}" method="post" enctype="multipart/form-data">
     @csrf
-    <input type="file" name="image"/>
+    <input type="file" required name="image"/>
     <input type="submit" value="Upload" />
 </form>

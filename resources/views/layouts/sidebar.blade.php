@@ -11,5 +11,8 @@
     <li>
         <a href="/academic" class="w3-bar-item w3-button">Academic</a>
     </li>
+    <li>
+        <a href="/profile" class="w3-bar-item w3-button">Profile</a>
+    </li>
 </ul>
 </div>  

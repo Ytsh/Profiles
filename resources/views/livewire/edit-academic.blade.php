@@ -4,10 +4,10 @@
 
     @foreach($counts as $key => $count)
     <div class="flex justify-center py-2" wire:key="{{$key}}">
-        <input type="text" name="equivalent[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['equivalent']}}" @endif/>
-        <input type="text" name="grade[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['grade']}}" @endif/>
-        <input type="text" name="university[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['university']}}" @endif/>
-        <input type="text" name="p_year[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['p_year']}}" @endif/>
+        <input type="text" required name="equivalent[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['equivalent']}}" @endif/>
+        <input type="text" required name="grade[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['grade']}}" @endif/>
+        <input type="text" required name="university[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['university']}}" @endif/>
+        <input type="text" required name="p_year[]" class="py-1 px-2 border rounded" placeholder="{{'Add experince '.($key+1)}}" @if(is_array($count)) value = "{{$count['p_year']}}" @endif/>
         <input type="hidden" name="equivalentId[]" @if(is_array($count)) value="{{$count['id']}}" @endif/>
         <button type="button" wire:click="remove({{$key}})" class="btn btn-outline-secondary">-</button>
 

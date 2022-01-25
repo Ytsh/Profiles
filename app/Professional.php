@@ -8,7 +8,7 @@ class Professional extends Model
 {
     protected $fillable = [
         'c_profession','user_id'];
-
+        
     public function experiences()
     {
         return $this->hasmany('App\Experience');

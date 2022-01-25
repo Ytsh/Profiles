@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Academic;
 use Auth;
+use App\Http\Requests\AcademicRequest;
+
 
 
 class AcademicController extends Controller
@@ -16,7 +18,7 @@ class AcademicController extends Controller
         // dd($academic);
         return view('academic',compact('academic'));
     }
-    public function store(Request $request)
+    public function store(AcademicRequest $request)
     {
         // dd($request->all());
         foreach($request->equivalent as $key => $value)
@@ -38,7 +40,7 @@ class AcademicController extends Controller
         return redirect()->back()->with('success','Academic added successfully');
 
     }
-    public function update(Request $request)
+    public function update(AcademicRequest $request)
     {
         // dd($request->all());
 

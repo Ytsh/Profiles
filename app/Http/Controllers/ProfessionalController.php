@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Professional;
 use App\Experience;
+use App\Http\Requests\ProfessionalRequest;
+
 
 
 class ProfessionalController extends Controller
@@ -19,7 +21,7 @@ class ProfessionalController extends Controller
 
         return view('professional');
     }
-    public function store(Request $request)
+    public function store(ProfessionalRequest $request)
     {
         // dd($request->all());
         $profesional = Professional::create($request->all());
@@ -34,7 +36,7 @@ class ProfessionalController extends Controller
         }
         return redirect()->back()->with('success','Profession added successfully');
     }
-    public function update(Request $request )
+    public function update(ProfessionalRequest $request )
     {
         // dd($request->all());
         $professional=Professional::with('experiences')->where('user_id',auth::user()->id)->first();
